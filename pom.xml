@@ -15,7 +15,7 @@
 	<description>Project Template for a SpringBoot Server with a React frontend, including test frameworks</description>
 
 	<properties>
-		<java.version>1.14</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>

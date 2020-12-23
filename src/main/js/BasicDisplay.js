@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {getFromServer, postToServer} from "./Comm";
+import ReactQuestionAndAnswer from "./ReactQuestionAndAnswer";
 
 function BasicTextComponent(){
     return "Basic Text displayed on screen"
@@ -49,11 +50,23 @@ function ServerClickCounter(){
 }
 
 export default function App() {
+    const sampleQuestion1 = {
+        id: "sampleQuestionID",
+        questionText: "What is my favorite ice cream flavor?",
+        correctAnswer: "vanilla",
+        possibleAnswers: ["chocolate", "strawberry", "vanilla"]
+    };
+
+    const sampleQuestion2 = {
+        id : "600-plane-./images/Annotated1BTrans.jpg",
+        type : "plane",
+        questionText : "On which plane is the ultrasound taken?",
+        correctAnswer : "transverse (short axis)",
+        possibleAnswers : [ "transverse (short axis)", "longitudinal (long axis)" ],
+        imageUrl : "./images/Annotated1BTrans.jpg"
+    }
+
     return (
-        <div>
-            <BasicTextComponent/>
-            <ClientClickCounter clickCount={0}/>
-            <ServerClickCounter />
-        </div>
+        <ReactQuestionAndAnswer data={sampleQuestion1}/>
     );
 }
